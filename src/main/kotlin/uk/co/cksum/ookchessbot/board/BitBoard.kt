@@ -26,7 +26,7 @@ object BitBoard {
         13, 18,  8, 12,  7,  6,  5, 63
     )
 
-    fun ls1bBitScan(bitBoard: ULong) = ls1bLookup[(((bitBoard and 0UL-bitBoard) * debruijn) shr 58).toInt()]
+    fun ls1bBitScan(bitBoard: ULong): Int = ls1bLookup[(((bitBoard and 0UL-bitBoard) * debruijn) shr 58).toInt()]
 
     fun ms1bBitScan(bitBoard: ULong): Int {
         var bb = bitBoard or bitBoard shr 1
